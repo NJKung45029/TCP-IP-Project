@@ -52,8 +52,8 @@ public class SearchServlet extends HttpServlet {
         String endDate = request.getParameter("endDate");
         
         // 2. Naver API 호출
-        String clientId = "q9X2XFTC9LvXPI2PUqgm"; // 본인 값으로 변경
-        String clientSecret = "UPCseGEtfF"; // 본인 값으로 변경
+        String clientId = "네이버 클라우드 ID"; // 본인 값으로 변경
+        String clientSecret = "네이버 2번째 ID값(뭐였는지 까먹음 2번째꺼 적으면됨)"; // 본인 값으로 변경
         String encodedKeyword = "";
         
         // 키워드가 null이 아닐 때만 인코딩
@@ -229,4 +229,5 @@ public class SearchServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, java.io.IOException {
         doGet(request, response);
     }
+
 }

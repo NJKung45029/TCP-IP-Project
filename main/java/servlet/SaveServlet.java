@@ -94,9 +94,10 @@ public class SaveServlet extends HttpServlet {
                 // [기억한 코드] 1. 드라이버 로드
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 // [기억한 코드] 2. 커넥션 (DB명, ID, PW 확인)
-                conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb1","root","1234");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost/본인 데베 이름","root","비번");
                 // [수정] postdate(작성일) 컬럼 추가
-                String sql = "INSERT INTO naver_search_results (keyword, title, link, description, bloggername, postdate) VALUES (?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO 제작한 컬럼 (keyword, title, link, description, bloggername, postdate) VALUES (?, ?, ?, ?, ?, ?)";
+                //description는 varchar(200)으로 나머지는 varvhar(50내외로 충분)
                 stmt = conn.prepareStatement(sql);
                 
                 for(BlogItem item : items) {
@@ -145,3 +146,4 @@ public class SaveServlet extends HttpServlet {
         return text.replaceAll("<b>", "").replaceAll("</b>", "").replaceAll("&quot;", "\"").replaceAll("&gt;", ">").replaceAll("&lt;", "<");
     }
 }
+
